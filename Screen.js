@@ -1,10 +1,20 @@
+import { Image, StyleSheet } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import HomeScreen from './screens/Home';
+import HomeScreen from './screens/home';
 import SearchScreen from './screens/Search';
 import ReelScreen from './screens/Reel';
 import ShopScreen from './screens/Shop';
 import ProfileScreen from './screens/Profile';
-import { Home, HomeFilled, Search, SearchFilled } from './Icons';
+import {
+  Home,
+  HomeFilled,
+  Search,
+  SearchFilled,
+  Reel,
+  ReelFilled,
+  Shop,
+  ShopFilled,
+} from './Icons';
 
 const Tab = createBottomTabNavigator();
 
@@ -23,8 +33,8 @@ function Screens() {
         component={HomeScreen}
         options={{
           tabBarIcon: ({ focused, color }) => {
-            if (focused) return <HomeFilled size={30} fill={color} />;
-            return <Home size={30} fill={color} />;
+            if (focused) return <HomeFilled size={28} fill={color} />;
+            return <Home size={28} fill={color} />;
           },
         }}
       />
@@ -33,16 +43,61 @@ function Screens() {
         component={SearchScreen}
         options={{
           tabBarIcon: ({ focused, color }) => {
-            if (focused) return <SearchFilled size={30} fill={color} />;
-            return <Search size={30} filled={color} />;
+            if (focused) return <SearchFilled size={27} fill={color} />;
+            return <Search size={28} fill={color} />;
           },
         }}
       />
-      <Tab.Screen name="reel" component={ReelScreen} />
-      <Tab.Screen name="shop" component={ShopScreen} />
-      <Tab.Screen name="profile" component={ProfileScreen} />
+      <Tab.Screen
+        name="reel"
+        component={ReelScreen}
+        options={{
+          tabBarIcon: ({ focused, color }) => {
+            if (focused) return <ReelFilled size={29} fill={color} />;
+            return <Reel size={28} fill={color} />;
+          },
+        }}
+      />
+      <Tab.Screen
+        name="shop"
+        component={ShopScreen}
+        options={{
+          tabBarIcon: ({ focused, color }) => {
+            if (focused) return <ShopFilled size={27} fill={color} />;
+            return <Shop size={28} fill={color} />;
+          },
+        }}
+      />
+      <Tab.Screen
+        name="profile"
+        component={ProfileScreen}
+        options={{
+          tabBarIcon: ({ focused, color }) => (
+            <Image
+              style={[
+                styles.avatar,
+                {
+                  borderColor: focused ? color : 'transparent',
+                },
+              ]}
+              source={{
+                uri: 'https://avatars.githubusercontent.com/u/59176193?v=4',
+              }}
+            />
+          ),
+        }}
+      />
     </Tab.Navigator>
   );
 }
 
 export default Screens;
+
+const styles = StyleSheet.create({
+  avatar: {
+    width: 28,
+    height: 28,
+    borderWidth: 1,
+    borderRadius: 21,
+  },
+});
