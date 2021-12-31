@@ -1,5 +1,7 @@
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
+import { View, StyleSheet, ScrollView } from 'react-native';
+import Post from '../../components/shared/Post';
+import posts from '../../data/posts';
 
 import Header from './components/Header';
 import Stories from './components/Stories';
@@ -8,7 +10,12 @@ const Home = () => {
   return (
     <View style={styles.container}>
       <Header />
-      <Stories />
+      <ScrollView showsVerticalScrollIndicator={false}>
+        <Stories />
+        {posts.map((post) => (
+          <Post key={post.id} post={post} />
+        ))}
+      </ScrollView>
     </View>
   );
 };

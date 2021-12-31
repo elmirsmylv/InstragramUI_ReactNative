@@ -33,8 +33,8 @@ function Screens() {
         component={HomeScreen}
         options={{
           tabBarIcon: ({ focused, color }) => {
-            if (focused) return <HomeFilled size={28} fill={color} />;
-            return <Home size={28} fill={color} />;
+            if (focused) return <HomeFilled size={24} fill={color} />;
+            return <Home size={24} fill={color} />;
           },
         }}
       />
@@ -43,8 +43,8 @@ function Screens() {
         component={SearchScreen}
         options={{
           tabBarIcon: ({ focused, color }) => {
-            if (focused) return <SearchFilled size={27} fill={color} />;
-            return <Search size={28} fill={color} />;
+            if (focused) return <SearchFilled size={23} fill={color} />;
+            return <Search size={24} fill={color} />;
           },
         }}
       />
@@ -53,8 +53,8 @@ function Screens() {
         component={ReelScreen}
         options={{
           tabBarIcon: ({ focused, color }) => {
-            if (focused) return <ReelFilled size={29} fill={color} />;
-            return <Reel size={28} fill={color} />;
+            if (focused) return <ReelFilled size={23} fill={color} />;
+            return <Reel size={24} fill={color} />;
           },
         }}
       />
@@ -63,8 +63,8 @@ function Screens() {
         component={ShopScreen}
         options={{
           tabBarIcon: ({ focused, color }) => {
-            if (focused) return <ShopFilled size={27} fill={color} />;
-            return <Shop size={28} fill={color} />;
+            if (focused) return <ShopFilled size={23} fill={color} />;
+            return <Shop size={24} fill={color} />;
           },
         }}
       />
@@ -95,8 +95,8 @@ export default Screens;
 
 const styles = StyleSheet.create({
   avatar: {
-    width: 28,
-    height: 28,
+    width: 24,
+    height: 24,
     borderWidth: 1,
     borderRadius: 21,
   },
